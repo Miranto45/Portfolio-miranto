@@ -38,7 +38,7 @@ class PortfolioController extends Controller
 
         try {
             Mail::to(config('portfolio.mail_to', config('mail.from.address')))
-                ->send(new ContactMessage($data));
+                ->queue(new ContactMessage($data));
         } catch (\Throwable $e) {
             Log::error('Echec envoi message contact : '.$e->getMessage());
 
