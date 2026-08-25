@@ -25,4 +25,9 @@ RUN composer install --no-dev --optimize-autoloader
 EXPOSE 10000
 
 # Commande de démarrage de Laravel
-CMD php artisan config:cache && php artisan route:cache && php artisan view:cache && php artisan serve --host=0.0.0.0 --port=10000
+CMD touch /var/www/database/database.sqlite && \
+    php artisan migrate --force && \
+    php artisan config:cache && \
+    php artisan route:cache && \
+    php artisan view:cache && \
+    php artisan serve --host=0.0.0.0 --port=10000
