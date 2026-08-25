@@ -28,7 +28,7 @@ EXPOSE 10000
 CMD mkdir -p /var/www/database && \
     touch /var/www/database/database.sqlite && \
     chmod -R 777 /var/www/storage /var/www/bootstrap/cache /var/www/database && \
-    php artisan migrate --force && \
+    php artisan storage:link --force && \
     php artisan config:cache && \
     php artisan route:cache && \
     php artisan view:cache && \

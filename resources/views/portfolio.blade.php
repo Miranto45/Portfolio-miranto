@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+<link rel="stylesheet" href="{{ secure_asset('css/style.css') }}">
 </head>
 <body>
 
@@ -37,7 +37,7 @@
   <section class="hero">
     <div class="hero-inner">
       <div class="photo-wrap reveal">
-        <img class="photo" src="{{ asset($p['photo']) }}" alt="Photo de {{ $p['full_name'] }}">
+        <img class="photo" src="{{ secure_asset($p['photo']) }}" alt="Photo de {{ $p['full_name'] }}">
         <span class="photo-frame"></span>
       </div>
       <div class="hero-text">
@@ -48,7 +48,7 @@
         <p class="tagline reveal">{{ $p['tagline'] }}</p>
         <p class="status reveal"><span class="dot"></span>{{ $p['status'] }}</p>
         <div class="hero-actions reveal">
-          <a class="btn" href="{{ asset('cv/cvmirantoandriamaherison.pdf') }}" download>Télécharger mon CV</a>
+          <a class="btn" href="{{ secure_asset('cv/cvmirantoandriamaherison.pdf') }}" download>Télécharger mon CV</a>
           <a class="btn ghost" href="{{ $p['github_url'] }}" target="_blank" rel="noopener">GitHub / {{ $p['github_user'] }}</a>
         </div>
       </div>
@@ -205,6 +205,6 @@
   <p><a href="{{ $p['github_url'] }}" target="_blank" rel="noopener">github.com/{{ $p['github_user'] }}</a></p>
 </footer>
 
-<script src="{{ asset('js/main.js') }}"></script>
+<script src="{{ secure_asset('js/main.js') }}"></script>
 </body>
 </html>
