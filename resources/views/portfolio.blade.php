@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{{ secure_asset('css/style.css') }}">
+<link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 <body>
 
@@ -37,7 +37,7 @@
   <section class="hero">
     <div class="hero-inner">
       <div class="photo-wrap reveal">
-        <img class="photo" src="{{ secure_asset($p['photo']) }}" alt="Photo de {{ $p['full_name'] }}">
+        <img class="photo" src="{{ asset($p['photo']) }}" alt="Photo de {{ $p['full_name'] }}">
         <span class="photo-frame"></span>
       </div>
       <div class="hero-text">
